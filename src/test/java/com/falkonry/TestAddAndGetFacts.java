@@ -103,7 +103,7 @@ public class TestAddAndGetFacts {
 		options.put("startTime", "2011-01-17T01:00:00.000Z"); // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("endTime", "2011-08-18T01:00:00.000Z");   // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("responseFormat", "application/json");    // can be text/csv or application/json based on your requirement
-
+		Thread.sleep(60000);
 		HttpResponseFormat factsResponse = falkonry.getFactsData(assessment.getId(), options);
 		Assert.assertEquals(factsResponse.getResponse().length() > 0, true);
 	}
@@ -190,6 +190,7 @@ public class TestAddAndGetFacts {
 
 		options = new HashMap<String, String>();
 		options.put("responseFormat", "application/json"); // can be text/csv or application/json based on your requirement
+		Thread.sleep(60000);
 		HttpResponseFormat factsResponse = falkonry.getFactsData(assessment.getId(), options);
 		Assert.assertEquals(factsResponse.getResponse().length() > 0, true);
 
@@ -259,6 +260,7 @@ public class TestAddAndGetFacts {
 		options.put("startTime", "2011-01-17T01:00:00.000Z"); // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("endTime", "2011-08-18T01:00:00.000Z");   // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("responseFormat", "application/json");    // can be text/csv or application/json based on your requirement
+		Thread.sleep(60000);
 		HttpResponseFormat factsResponse = falkonry.getFactsData(assessment.getId(), options);
 		Assert.assertEquals(factsResponse.getResponse().length() > 0, true);
 	}
@@ -327,6 +329,7 @@ public class TestAddAndGetFacts {
 		options.put("startTime", "2011-01-17T01:00:00.000Z"); // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("endTime", "2011-08-18T01:00:00.000Z");   // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("responseFormat", "application/json");    // can be text/csv or application/json based on your requirement
+		Thread.sleep(60000);
 		HttpResponseFormat factsResponse = falkonry.getFactsData(assessment.getId(), options);
 		Assert.assertEquals(factsResponse.getResponse().length() > 0, true);
 	}
@@ -447,6 +450,7 @@ public class TestAddAndGetFacts {
 		options.put("startTime", "2011-01-17T01:00:00.000Z"); // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("endTime", "2011-08-18T01:00:00.000Z");   // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("responseFormat", "application/json");    // can be text/csv or application/json based on your requirement
+		Thread.sleep(60000);
 		HttpResponseFormat factsResponse = falkonry.getFactsData(assessment.getId(), options);
 		Assert.assertEquals(factsResponse.getResponse().length() > 0, true);
 	}
@@ -513,6 +517,7 @@ public class TestAddAndGetFacts {
 		options.put("startTime", "2011-01-17T01:00:00.000Z"); // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("endTime", "2011-08-18T01:00:00.000Z");   // time should be in ISO format YYYY-MM-DDTHH:mm:ss.SSSZ
 		options.put("responseFormat", "application/json");    // can be text/csv or application/json based on your requirement
+		Thread.sleep(60000);
 		HttpResponseFormat factsResponse = falkonry.getFactsData(assessment.getId(), options);
 		Assert.assertEquals(factsResponse.getResponse().length() > 0, true);
 	}
