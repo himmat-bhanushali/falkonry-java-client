@@ -203,8 +203,8 @@ public class Falkonry {
 	 * @throws Exception
 	 * @return List
 	 */
-	public List<Assessment> onDatastream(String id) throws Exception {
-		return this.falkonryService.onDatastream(id);
+	public List<Assessment> onDatastream(String id, Map<String, String> options) throws Exception {
+		return this.falkonryService.onDatastream(id, options);
 	}
 
 	/**
@@ -213,8 +213,8 @@ public class Falkonry {
 	 * @throws Exception
 	 * @return List
 	 */
-	public List<Assessment> offDatastream(String id) throws Exception {
-		return this.falkonryService.offDatastream(id);
+	public List<Assessment> offDatastream(String id, Map<String, String> options) throws Exception {
+		return this.falkonryService.offDatastream(id, options);
 	}
 
 	/**

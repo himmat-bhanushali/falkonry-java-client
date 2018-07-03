@@ -22,6 +22,7 @@ public class TestDatastreamLive {
 	String host = System.getenv("FALKONRY_HOST_URL");
 	String token = System.getenv("FALKONRY_TOKEN");
 	String datastreamId = System.getenv("FALKONRY_DATASTREAM_SLIDING_ID");
+	String assessmentId = System.getenv("FALKONRY_ASSESSMENT_SLIDING_ID");
 	
 	
 	List<Datastream> datastreams = new ArrayList<Datastream>();
@@ -110,6 +111,46 @@ public class TestDatastreamLive {
 		Assert.assertEquals(true, assessments2.size() != 0);
 
 	}
+
+	/**
+	 * Should turn on the assessment
+	 * 
+	 * @throws Exception
+	 */
+	@Ignore
+	@Test
+	public void testOnAssessment() throws Exception {
+
+		Map<String, String> options = new HashMap<String, String>();
+		options.put("assessment", assessmentId);
+
+		List<Assessment> assessments = falkonry.onDatastream(datastreamId, options);
+		Assert.assertEquals(true, assessments.size() == 1);
+		Assert.assertEquals(true, assessments.get(0).getId() == assessmentId);
+		Assert.assertEquals(true, assessments.get(0).getLive == "ON");
+	}
+
+	/**
+	 * Should turn off the assessment
+	 * 
+	 * @throws Exception
+	 */
+	@Ignore
+	@Test
+	public void testOffAssessment() throws Exception {
+		
+		testOnAssessment();
+
+		Map<String, String> options = new HashMap<String, String>();
+		options.put("assessment", assessmentId);
+
+		List<Assessment> assessments = falkonry.offDatastream(datastreamId, options);
+		Assert.assertEquals(true, assessments.size() == 1);
+		Assert.assertEquals(true, assessments.get(0).getId() == assessmentId);
+		Assert.assertEquals(true, assessments.get(0).getLive == "OFF");
+
+	}
+
 
 	/**
 	 *

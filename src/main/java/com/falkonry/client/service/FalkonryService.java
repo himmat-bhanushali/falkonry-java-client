@@ -403,9 +403,12 @@ public class FalkonryService {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Assessment> onDatastream(String id) throws Exception {
+	public List<Assessment> onDatastream(String id, Map<String, String> options) throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
-		String url = "/datastream/" + id + "/on";
+		String url = "/datastream/" + id + "/on?";
+		if (options.containsKey("assessment")) {
+			url += "assessment=" + URLEncoder.encode(options.get("assessment"), "UTF-8");
+		}
 		String assessment_json = httpService.post(url, "");
 		return mapper.readValue(assessment_json, new TypeReference<List<Assessment>>() {
 		});
@@ -418,9 +421,12 @@ public class FalkonryService {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Assessment> offDatastream(String id) throws Exception {
+	public List<Assessment> offDatastream(String id, Map<String, String> options) throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
-		String url = "/datastream/" + id + "/off";
+		String url = "/datastream/" + id + "/off?";
+		if (options.containsKey("assessment")) {
+			url += "assessment=" + URLEncoder.encode(options.get("assessment"), "UTF-8");
+		}
 		String assessment_json = httpService.post(url, "");
 		return mapper.readValue(assessment_json, new TypeReference<List<Assessment>>() {
 		});
